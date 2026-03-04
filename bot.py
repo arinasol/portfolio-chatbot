@@ -1,6 +1,6 @@
 from responses import questions, fallback_messages, final_fallback
 
-class СhatBot:
+class ChatBot:
     # Counter that tracks how many times the bot did not understand the user input
     def __init__(self):
         self.unknown_counter = 0
@@ -20,7 +20,7 @@ class СhatBot:
                 self.unknown_counter = 0
                 return value["answer"]
 
-        unknown_counter += 1
+        self.unknown_counter += 1
 
         # Return different fallback messages for the first few unknown questions
         if self.unknown_counter <= len(fallback_messages):
